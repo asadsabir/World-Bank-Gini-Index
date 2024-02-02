@@ -1,7 +1,7 @@
 World Bank Gini Index
 ==============================
 
-A short description of the project.
+Analysis of the Gini Index using data from the World Bank.
 
 Project Organization
 ------------
