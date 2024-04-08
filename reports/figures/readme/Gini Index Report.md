@@ -111,7 +111,7 @@ Correlation with Gini Index
 
 *Figure 3: Feature correlations with Gini Index. You can find the entire correlation matrix at /reports/edacorr.xlsx* 
 ## Feature Selection and Engineering
-### Poverty PCA 
+### Principle Component Analysis for poverty related features 
 
 Unsurprisingly, all the poverty related features were highly correlated with each other. To understand them better and use them effectively, I transformed those 6 features with PCA. 
 
