@@ -58,11 +58,13 @@ The World Bank has over[ 1400 indicators ](https://data.worldbank.org/indicator?
 12. Unemployment 
 12. Inflation 
 
+[^1]: Poverty wealth gap percentage is the mean shortfall in income or consumption (counting the nonpoor as having zero shortfall), expressed as a percentage of the poverty line.
+
 ## Data Wrangling 
 
-Each variable had its own csv file. After transforming and joining all the variables, the resulting table had 16,757 rows and 28 columns where each row represented a country at a year. While the table was vast, covering about 200 countries over the last 60 years, the data itself was sparse. The data is an amalgamation of indicators from different world organizations that measure a different set of countries at different periodicities. To tackle this issue, I first dropped features that were highly correlated and then interpolated some of the missing values by taking an average of the feature measured in the same country around those years. For example, a radius of 2 for a missing feature in Cambodia in 1995 will be filled by the average of that value in Cambodia measured from 1993 to 1997. I used a radius of 3 to yield 384 rows with 60 countries between 2002 to 2021. As I dropped more columns while feature engineering, I was able to go back and grab more data before modelling. 
+Each variable had its own csv file. After transforming and joining all the variables, the resulting table had *16,757* rows and *28* columns where each row represented a country at a year. While the table was vast, covering about *200* countries over the last *60* years, the data itself was sparse. The data is an amalgamation of indicators from different world organizations that measure a different set of countries at different periodicities. To tackle this issue, I first dropped features that were highly correlated and then interpolated some of the missing values by taking an average of the feature measured in the same country around those years. For example, a radius of 2 for a missing feature in Cambodia in 1995 will be filled by the average of that value in Cambodia measured from 1993 to 1997. I used a radius of *3* to yield *384* rows with *60* countries between *2002* to *2021*. As I dropped more columns while feature engineering, I was able to go back and grab more data before modelling. 
 
-Gini Index distribu on and correla ons 
+Gini Index distribution and correlations 
 
 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.002.jpeg)
 
@@ -279,4 +281,4 @@ Contrary to a common misconception that increasing wealth inequality benefits ev
 
 For future analyses, incorporating more variables such as political system, international trade, and crime statistics could enrich our understanding. Exploring alternative models, such as Generalized Additive Models (GAMs) widely used in econometrics, could yield valuable insights. Delving into outlier countries like Niger, Vietnam, or the Philippines would provide deeper domain knowledge. This holistic approach aims to refine our understanding of a challenge as complex and pervasive as wealth inequality. 
 
-[^1]: Poverty wealth gap percentage is the mean shortfall in income or consumption (counting the nonpoor as having zero shortfall), expressed as a percentage of the poverty line.  
+  
