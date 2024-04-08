@@ -85,7 +85,7 @@ Gini Index distribution and correlations
 
 *Figure 2: The distribution of Gini Index is skewed left.* 
 
-Correlation with Gini Index 
+### Feature Correlations with Gini Index 
 
 |Features |correlation  |
 | - | :- |
