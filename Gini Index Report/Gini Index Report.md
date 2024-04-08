@@ -1,10 +1,10 @@
-﻿Gini Index Analysis 
+﻿## Introduction 
 
-Mo va on 
+### Motivation 
 
 Poverty and wealth inequality are significant global concerns that have far-reaching socio-economic implications. The causes, effects, and associations of income distributions in different countries are difficult to understand on a macro scale. By using data from the World Bank, this project aims to deepen that understanding and help inform both public opinion and policy. In this analysis, I mainly focused on health and education indicators. 
 
-What is Gini Index? 
+### What is Gini Index? 
 
 The Gini Index, or Gini Coefficient is a measure of how close the income distribution is to perfect equality or perfect inequality. A Gini Index of 0 indicates perfect equality while a Gini Index of 100 indicates perfect inequality. ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.001.jpeg)
 
@@ -12,11 +12,11 @@ The Gini Index, or Gini Coefficient is a measure of how close the income distrib
 
 Figure 1 shows how the Gini Index is calculated. As inequality increases, The Lorenz curve moves further out and increases area 'A'. As inequality decreases, the Lorenz curve approaches the line of equality and decreases area ‘A’. 
 
-Variables 
+## Variables 
 
 The World Bank has over[ 1400 indicators ](https://data.worldbank.org/indicator?tab=all)to choose from. The following are indicators I chose for different categories: 
 
-Poverty  
+### Poverty  
 
 1. Gini Index 
 1. Poverty Wealth Gap percentages below the following poverty lines[^1]  
@@ -28,7 +28,7 @@ Poverty
 - $3.65 a day 
 - $6.85 a day 
 
-Health 
+### Health 
 
 4. Life Expectancy 
 4. Number of physicians per 1000 people 
@@ -39,7 +39,7 @@ Health
 - Injury 
 9. Population ages 65 and above (% of total population) 
 
-Education 
+### Education 
 
 10. Percentage of population, ages 25+, who have completed the following 
     1. Upper secondary 
@@ -52,13 +52,13 @@ Education
     1. Doctoral or equivalent 
 10. Number of Scientific and technical journal articles published per year 
 
-Economy 
+### Economy 
 
 12. GDP (current USD) 
 12. Unemployment 
 12. Inflation 
 
-Data Wrangling 
+## Data Wrangling 
 
 Each variable had its own csv file. After transforming and joining all the variables, the resulting table had 16,757 rows and 28 columns where each row represented a country at a year. While the table was vast, covering about 200 countries over the last 60 years, the data itself was sparse. The data is an amalgamation of indicators from different world organizations that measure a different set of countries at different periodicities. To tackle this issue, I first dropped features that were highly correlated and then interpolated some of the missing values by taking an average of the feature measured in the same country around those years. For example, a radius of 2 for a missing feature in Cambodia in 1995 will be filled by the average of that value in Cambodia measured from 1993 to 1997. I used a radius of 3 to yield 384 rows with 60 countries between 2002 to 2021. As I dropped more columns while feature engineering, I was able to go back and grab more data before modelling. 
 
@@ -98,7 +98,7 @@ Correlation with Gini Index
 
 *Figure 3: Feature correlations with Gini Index. You can find the entire correlation matrix at /reports/edacorr.xlsx* 
 
-Poverty PCA 
+### Poverty PCA 
 
 Unsurprisingly, all the poverty related features were highly correlated with each other. To understand them better and use them effectively, I transformed those 6 features with PCA. 
 
@@ -120,7 +120,7 @@ Figure 4 shows that 99% of the variance can be explained by the first 2 componen
 
 The second component, although it only represents 12% of the variance, is more interesting. It sees great negative representation from features at $6.85/day, great positive representation from features at $2.15/day, and close to zero with $3.65/day. It seems like the second component measures the severity of poverty. If the second component is positive, there's more people at the $2.15 level than at $6.85 and vice versa if negative. 
 
-Using VIFs to reduce mul collinearity 
+## Using VIFs to reduce multicollinearity 
 
 
 
@@ -150,7 +150,7 @@ Since my goal for this model is more about interpretability and inference and le
 
 Above, you can see the VIFs for each feature before and after removal. After dropping those features, I repeated the ETL to gather more data. With the same radius, I was able to get from 384 rows in 60 countries to 429 rows with 67 countries.  
 
-Preprocessing and Model Selec on 
+## Preprocessing and Model Selection 
 
 The pipeline begins by standard scaling all the features. It then uses PCA on the poverty features to reduce it to two columns while letting the remaining columns ‘pass through’. 
 
@@ -189,7 +189,7 @@ Figure 6 shows how both models perform with less features. XGBoost clearly perfo
 - Population, total 
 - Hospital beds (per 1,000 people) 
 
-Feature Importance 
+## Feature Importance 
 
 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.009.jpeg)
 
@@ -201,7 +201,7 @@ Feature Importance
 
 From Figure 7 and 8, it’s clear that Educational Attainment, at least completed lower secondary and GDP per capita are the 2 most important features. It’s also interesting to note that although poverty pca 1 isn’t ranked highly by XGBoost, it has a large impact on the drop in explained variance when shuffled. This shows that it may have important interactions with one or more of the other features. 
 
-Accumulated Local Effects (ALE) 
+## Accumulated Local Effects (ALE) 
 
 I used ALE plots to examine the relationship between variables and Gini Index. Accumulated local effects describe how features influence the prediction of a machine learning model on average. The y-axis can be interpreted as the difference in the features prediction from the average prediction on the data. An ALE of 2 means we can expect the Gini index to be about 2 points higher than average by having that feature value. 
 
@@ -211,7 +211,7 @@ Consider a scenario where you're analyzing the factors influencing house prices.
 
 or the year it was built. 
 
-Educa onal A ainment, at least completed secondary 
+### Educational Attainment, at least completed secondary 
 
 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.011.jpeg)![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.012.jpeg)
 
@@ -219,19 +219,19 @@ This indicator is a measure of the percentage of population ages 25 and over tha
 
 comparability of education programs at the international level. The median value for this indicator is at 85% and the 75th percentile is at 96%. This shows that even for developed countries where this measure is high, the association is still strong and increasing the educational attainment rate could help decrease wealth inequality.  
 
-GDP per capita 
+### GDP per capita 
 
 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.013.jpeg) ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.014.jpeg)
 
 GDP per capita represents the value of all the goods and services produced by a country (GDP) divided by its population. This indicator is often used to measure the general prosperity of a country. The ALE shows that increasing GDP per capita to about the median level, increases wealth inequality. However, after that point, the trend inverses. 
 
-Hospital Beds (per 1,000 people) 
+### Hospital Beds (per 1,000 people) 
 
 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.015.jpeg) ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.016.jpeg)
 
 Hospital beds per 1,000 people is one of many key indicators tracked by the World Health Organization (WHO) to evaluate health systems. This feature is difficult to interpret on its own as it reflects both demand and supply side factors. For example, a low value could represent a healthy population or the inadequacy of a health system to provide enough beds. Whereas a high value could be because of an epidemic.  
 
-Cause of Death, by injury 
+### Cause of Death, by injury 
 
 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.017.jpeg) ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.018.jpeg)
 
@@ -239,7 +239,7 @@ Cause of Death, by injury, refers to the percent share of all deaths for all age
 
 7\.4%. After that we see a sharp increase in the predicted Gini index. 
 
-Popula on, total
+### Population, total
 
 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.019.jpeg)![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.020.jpeg)
 
@@ -257,7 +257,7 @@ Severity of Poverty (Poverty PCA 1)
 
 Increase in the severity of poverty is correlated with an increase in Gini index and in wealth inequality up to the 35th percentile, after which the Gini index plateaus. 
 
-Looking at Countries 
+## Looking at Countries 
 
 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.025.jpeg)
 
@@ -271,7 +271,7 @@ Above, we see countries where the model fails most. Analyzing these countries ca
 
 Keep in mind that this isn’t a world comparison. This only includes the 67 countries in my dataset. 
 
-Final thoughts and Ideas for Further research 
+## Final thoughts and Ideas for Further research 
 
 The Gini index, while widely used to gauge wealth inequality, has its limitations. Research has shown that it tends to be more sensitive to changes in the middle of the distribution than at the extremes. In future investigations, exploring wealth inequality through additional indicators would offer a more nuanced perspective. While my current analysis focuses on associations, it refrains from making strong causal claims. A potential enhancement could involve introducing a time lag between Gini index and other features. 
 
