@@ -1,4 +1,15 @@
-﻿## Introduction 
+﻿
+## Contents
+
+1. [Introduction](#introduction)
+2. [Variables](#variables)
+3. [Data Wrangling](#data-wrangling)
+4. [Feature Selection and Engineering](#feature-selection-and-engineering)
+5. [Preprocessing and Model selection](#preprocessing-and-model-selection)
+6. [Accumulated Local Effect Plots](#accumulated-local-effects-ale)
+7. [Looking at Countries](#looking-at-countries)
+8. [Final thoughts](#final-thoughts-and-ideas-for-further-research)
+## Introduction 
 
 ### Motivation 
 
@@ -99,7 +110,7 @@ Correlation with Gini Index
 |EA, at least completed lower secondary | -0.62| 
 
 *Figure 3: Feature correlations with Gini Index. You can find the entire correlation matrix at /reports/edacorr.xlsx* 
-
+## Feature Selection and Engineering
 ### Poverty PCA 
 
 Unsurprisingly, all the poverty related features were highly correlated with each other. To understand them better and use them effectively, I transformed those 6 features with PCA. 
@@ -122,7 +133,7 @@ Figure 4 shows that 99% of the variance can be explained by the first 2 componen
 
 The second component, although it only represents 12% of the variance, is more interesting. It sees great negative representation from features at $6.85/day, great positive representation from features at $2.15/day, and close to zero with $3.65/day. It seems like the second component measures the severity of poverty. If the second component is positive, there's more people at the $2.15 level than at $6.85 and vice versa if negative. 
 
-## Using VIFs to reduce multicollinearity 
+### Using VIFs to reduce multicollinearity 
 
 
 
