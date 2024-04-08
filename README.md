@@ -68,7 +68,7 @@ Project Organization
 
 ### Motivation 
 
-Poverty and wealth inequality are significant global concerns that have far-reaching socio-economic implications. The causes, effects, and associations of income distributions in different countries are difficult to understand on a macro scale. By using data from the World Bank, this project aims to deepen that understanding and help inform both public opinion and policy. In this analysis, I mainly focused on health and education indicators. 
+Poverty and wealth inequality are significant global concerns that have far-reaching socio-economic implications. The causes, effects, and associations of income distributions in different countries are difficult to understand on a macro-scale. By using data from the World Bank, this project aims to deepen that understanding and help inform both public opinion and policy. In this analysis, I mainly focused on health and education indicators. 
 
 ### What is Gini Index? 
 
