@@ -70,47 +70,32 @@ Gini Index distribu on and correla ons
 
 Correlation with Gini Index 
 
-Gini index  1.00 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.003.png)COD, by injury  0.51 Poverty headcount ratio at $6.85  0.33 Poverty gap at $6.85  0.30 
-
-Poverty gap at $3.65  0.27 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.004.png)
-
-Poverty headcount ratio at $3.65  0.26 
-
-Poverty gap at $2.15  0.25 
-
-Poverty headcount ratio at $2.15  0.25 
-
-Population, total  0.24 
-
-Inflation  0.20 
-
-GDP (current US$)  0.08 
-
-Unemployment  0.04 
-
-Year  -0.05 
-
-EA, at least completed short-cycle tertiary  -0.32 
-
-Life expectancy  -0.36 
-
-EA, Doctoral or equivalent  -0.38 
-
-GDP per capita  -0.41 
-
-Physicians (per 1,000 people)  -0.43 
-
-EA, at least Master's or equivalent  -0.46 
-
-COD, by non-communicable diseases  -0.48 
-
-EA, at least completed primary  -0.52 
-
-Population ages 65 and above (% of total population)  -0.59 
-
-Hospital beds (per 1,000 people)  -0.59 
-
-EA, at least completed lower secondary  -0.62 
+|Features |correlation  |
+| - | :- |
+|Gini index|  1.00 |
+|COD, by injury|  0.51 |
+|Poverty headcount ratio| at $6.85  0.33| 
+|Poverty gap at $6.85  0.30 |
+|Poverty gap at $3.65  0.27 |
+|Poverty headcount ratio at $3.65 | 0.26| 
+|Poverty gap at $2.15 | 0.25 |
+|Poverty headcount ratio at $2.15 | 0.25| 
+|Population, total | 0.24| 
+|Inflation | 0.20 |
+|GDP (current US$) | 0.08| 
+|Unemployment | 0.04| 
+|Year | -0.05| 
+|EA, at least completed short-cycle tertiary | -0.32| 
+|Life expectancy | -0.36 |
+|EA, Doctoral or equivalent | -0.38| 
+|GDP per capita | -0.41 |
+|Physicians (per 1,000 people)|  -0.43 |
+|EA, at least Master's or equivalent | -0.46| 
+|COD, by non-communicable diseases | -0.48| 
+|EA, at least completed primary  |-0.52 |
+|Population ages 65 and above (% of total population) | -0.59| 
+|Hospital beds (per 1,000 people) | -0.59 |
+|EA, at least completed lower secondary | -0.62| 
 
 *Figure 3: Feature correlations with Gini Index. You can find the entire correlation matrix at /reports/edacorr.xlsx* 
 
