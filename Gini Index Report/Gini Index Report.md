@@ -72,7 +72,6 @@ Correlation with Gini Index
 
 |Features |correlation  |
 | - | :- |
-|Gini index|  1.00 |
 |COD, by injury|  0.51 |
 |Poverty headcount ratio at $6.85 | 0.33| 
 |Poverty gap at $6.85 | 0.30 |
