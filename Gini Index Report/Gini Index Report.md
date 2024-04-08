@@ -271,6 +271,7 @@ Above, we see countries where the model fails most. Analyzing these countries ca
 
 ![](Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.028.jpeg)
 
+[!NOTE]
 Keep in mind that this isn’t a world comparison. This only includes the 67 countries in my dataset. 
 
 ## Final thoughts and Ideas for Further research 
