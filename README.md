@@ -23,9 +23,7 @@ Poverty and wealth inequality are significant global concerns that have far-reac
 
 The Gini Index, or Gini Coefficient is a measure of how close the income distribution is to perfect equality or perfect inequality. A Gini Index of 0 indicates perfect equality while a Gini Index of 100 indicates perfect inequality. ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.001.jpeg)
 
-*Figure 1* 
-
-Figure 1 shows how the Gini Index is calculated. As inequality increases, The Lorenz curve moves further out and increases area 'A'. As inequality decreases, the Lorenz curve approaches the line of equality and decreases area ‘A’. 
+*Figure 1 shows how the Gini Index is calculated. As inequality increases, The Lorenz curve moves further out and increases area 'A'. As inequality decreases, the Lorenz curve approaches the line of equality and decreases area ‘A’.* 
 
 ## Variables 
 
