@@ -228,9 +228,7 @@ Consider a scenario where you're analyzing the factors influencing house prices.
 
 ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.011.jpeg)![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.012.jpeg)
 
-This indicator is a measure of the percentage of population ages 25 and over that attained or completed lower secondary education. Countries at higher levels are associated with a lower Gini index and lower wealth inequality. The data for education is mapped to the International Standard Classification of Education (ISCED) to ensure the 
-
-comparability of education programs at the international level. The median value for this indicator is at 85% and the 75th percentile is at 96%. This shows that even for developed countries where this measure is high, the association is still strong and increasing the educational attainment rate could help decrease wealth inequality.  
+This indicator is a measure of the percentage of population ages 25 and over that attained or completed lower secondary education. Countries at higher levels are associated with a lower Gini index and lower wealth inequality. The data for education is mapped to the International Standard Classification of Education (ISCED) to ensure the comparability of education programs at an international level. The median value for this indicator is at 85% and the 75th percentile is at 96%. This shows that even for developed countries where this measure is high, the association is still strong and increasing the educational attainment rate could help decrease wealth inequality.  
 
 ### GDP per capita 
 
@@ -248,15 +246,13 @@ Hospital beds per 1,000 people is one of many key indicators tracked by the Worl
 
 ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.017.jpeg) ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.018.jpeg)
 
-Cause of Death, by injury, refers to the percent share of all deaths for all ages by intentional or unintentional       injuries. The ALE plot seems to plateau or even decrease with this indicator until the 65th percentile mark which is about 
-
-7\.4%. After that we see a sharp increase in the predicted Gini index. 
+Cause of Death, by injury, refers to the percent share of all deaths for all ages by intentional or unintentional injuries. The ALE plot seems to plateau or even decrease with this indicator until the 65th percentile mark which is about 7\.4%. After that we see a sharp increase in the predicted Gini index. 
 
 ### Population, total
 
 ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.019.jpeg)![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.020.jpeg)
 
-This indicator counts all residents regardless of legal status or citizenship. The ALE plot suggests that there is an optimal level of population that keeps the Gini index low. A population higher or lower than that level, increases the Gini index. That level, which seems close the 55th to 65th percentile mark, is around 11,000,000 people. 
+This indicator counts all residents regardless of legal status or citizenship. The ALE plot suggests that there is an optimal level of population that keeps the Gini index low. A population higher or lower than that level, increases the Gini index. This aforementioned optimal level, which seems close the 55th to 65th percentile mark, is around 11,000,000 people. 
 
 Average level of poverty (Poverty PCA 0) 
 
@@ -276,14 +272,14 @@ Increase in the severity of poverty is correlated with an increase in Gini index
 
 ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.026.jpeg)
 
-Above, we see countries where the model fails most. Analyzing these countries can give us more insight into both the model and wealth inequality. For example, Mozambique is one of the poorest countries in the world and is plagued by crime and corruption. Crime rates and corruption could have been a useful feature to include in the model. On the other hand, countries where wealth inequality is much lower than the model predicted could have useful policies or strategies that other countries can use. 
+Above, we see countries for which the model has the highest error (residual). Analyzing these countries can give us more insight into both the model, those countries and wealth inequality in general. For example, Mozambique has a much higher wealth inequality than the model predicted. It is one of the poorest countries in the world and is plagued by crime and corruption. Crime rates and corruption could have been a useful feature to include in the model. On the other hand, countries where wealth inequality is much lower than the model predicted could have useful policies or strategies that other countries can use. 
 
 ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.027.jpeg)
 
 ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.028.jpeg)
 
 >[!NOTE]
->Keep in mind that this isn’t a world comparison. This only includes the 67 countries in my dataset. 
+>Keep in mind that this isn’t a world comparison. This only includes the 67 countries in my dataset. you can view the full list of all 67 countries in notebooks/new_data.ipynb on line 14
 
 ## Final thoughts and Ideas for Further research 
 
