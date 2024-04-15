@@ -75,7 +75,7 @@ The World Bank has over[ 1400 indicators ](https://data.worldbank.org/indicator?
 
 ## Data Wrangling 
 
-Each variable had its own csv file. After transforming and joining all the variables, the resulting table had *16,757* rows and *28* columns where each row represented a country at a year. While the table was vast, covering about *200* countries over the last *60* years, the data itself was sparse. The data is an amalgamation of indicators from different world organizations that measure a different set of countries at different periodicities. To tackle this issue, I first dropped features that were highly correlated and then interpolated some of the missing values by taking an average of the feature measured in the same country around those years. For example, a radius of 2 for a missing feature in Cambodia in 1995 will be filled by the average of that value in Cambodia measured from 1993 to 1997. I used a radius of *3* to yield *384* rows with *60* countries between *2002* to *2021*. As I dropped more columns while feature engineering, I was able to go back and grab more data before modelling. 
+Each variable had its own csv file. After transforming and joining all the variables, the resulting table had **16,757** rows and **28** columns where each row represented a country at a year. While the table was vast, covering about *200* countries over the last **60** years, the data itself was sparse. The data is an amalgamation of indicators from different world organizations that measure a different set of countries at different periodicities. To tackle this issue, I first dropped features that were highly correlated and then interpolated some of the missing values by taking an average of the feature measured in the same country around those years. For example, a radius of 2 for a missing feature in Cambodia in 1995 will be filled by the average of that value in Cambodia measured from 1993 to 1997. I used a radius of **3** to yield **384** rows with **60** countries between **2002** to **2021**. As I dropped more columns while feature engineering, I was able to go back and grab more data before modelling. 
 
 Gini Index distribution and correlations 
 
@@ -163,7 +163,7 @@ The second component, although it only represents 12% of the variance, is more i
 
 Since my goal for this model is more about interpretability and inference and less about predictive accuracy. I wanted to remove as much multi-collinearity as possible. I went with the rule of thumb to keep VIFs below 5. 
 
-Above, you can see the VIFs for each feature before and after removal. After dropping those features, I repeated the ETL to gather more data. With the same radius, I was able to get from 384 rows in 60 countries to 429 rows with 67 countries.  
+Above, you can see the VIFs for each feature before and after removal. After dropping those features, I repeated the ETL to gather more data. With the same radius, I was able to get from **384** rows in **60** countries to **429** rows with **67** countries.  
 
 ## Preprocessing and Model Selection 
 
@@ -194,7 +194,7 @@ KNN and XGBoost both performed similarly, after tuning their hyper-parameters, w
 
 *Figure 6* 
 
-Figure 6 shows how both models perform with less features. XGBoost clearly performs better with less features. Using Recursive feature elimination, permutation importance, trial, and error I was able reduce the model to these seven features with an average R-squared of 0.68: 
+Figure 6 shows how both models perform with less features. XGBoost clearly performs better with less features. Using Recursive feature elimination, permutation importance, trial, and error I was able reduce the model to these **7** features with an average R-squared of **0.68**: 
 
 - Poverty PCA 0 (Poverty magnitude) 
 - Poverty PCA 1 (Poverty severity) 
@@ -222,9 +222,7 @@ I used ALE plots to examine the relationship between variables and Gini Index. A
 
 ALE is calculated by first ‘slicing’ the feature of interest into even intervals. The ‘slope’, at each interval, is estimated using its data points. By taking the difference in the model’s prediction between a small increase and decrease in the variable of interest at each data point and taking an average. This slope is the local effect of the variable. Starting at the lowest value of the variable and moving up, the local effects at each interval are cumulatively added up, hence the name. The final graph is then centered to zero. This plot has the effect of estimating the partial derivative of the model with respect to the variable and then taking an indefinite integral. This helps isolate the effects of the variable alone. 
 
-Consider a scenario where you're analyzing the factors influencing house prices. You're measuring the impact of a specific variable, let's say "area", on house prices. You slice the range of this variable into intervals and for each interval, you measure how a small change in area affects the house prices. The cumulative sum of these changes, starting from the smallest house, shows you the overall influence of area on house prices. This approach helps isolate the impact of area, allowing you to understand its effect on house prices without being confused by other factors like the location of the house 
-
-or the year it was built. 
+Consider a scenario where you're analyzing the factors influencing house prices. You're measuring the impact of a specific variable, let's say "area", on house prices. You slice the range of this variable into intervals and for each interval, you measure how a small change in area affects the predicted house prices. The cumulative sum of these changes, starting from the smallest house, shows you the overall influence of area on house prices. This approach helps isolate the impact of area, allowing you to understand its effect on house prices without being confused by other factors like the location of the house or the year it was built. 
 
 ### Educational Attainment, at least completed secondary 
 
