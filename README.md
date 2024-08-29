@@ -254,13 +254,13 @@ Cause of Death, by injury, refers to the percent share of all deaths for all age
 
 This indicator counts all residents regardless of legal status or citizenship. The ALE plot suggests that there is an optimal level of population that keeps the Gini index low. A population higher or lower than that level, increases the Gini index. This aforementioned optimal level, which seems close the 55th to 65th percentile mark, is around 11,000,000 people. 
 
-Average level of poverty (Poverty PCA 0) 
+### Average level of poverty (Poverty PCA 0) 
 
 ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.021.jpeg)![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.022.jpeg)
 
 Increase in levels of poverty is correlated with an increase in Gini index and in wealth inequality. 
 
-Severity of Poverty (Poverty PCA 1) 
+### Severity of Poverty (Poverty PCA 1) 
 
 ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.023.jpeg) ![](reports/figures/readme/Aspose.Words.bd76c45c-511d-4d2a-8062-41716b796190.024.jpeg)
 
